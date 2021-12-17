@@ -1,5 +1,6 @@
 package com.devstudio.arcalive.ui.fragmet
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,10 +14,17 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.LinearLayout
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.OnBackPressedDispatcher
+import androidx.webkit.WebSettingsCompat
+import androidx.webkit.WebSettingsCompat.FORCE_DARK_ON
 import com.devstudio.arcalive.R
 import java.net.URISyntaxException
 
 class ArcaViewFragment : Fragment() {
+
+    private lateinit var callback : OnBackPressedCallback
+    private lateinit var webView : WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +33,22 @@ class ArcaViewFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_arca_view, container, false)
 
-        val webView = v.findViewById<WebView>(R.id.arcaWebView)
+        webView = v.findViewById(R.id.arcaWebView)
+
+        webView.webViewClient = object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+                if(url != null){
+                    webView.loadUrl(url)
+                }
+                return false
+            }
+        }
 
         webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
 
-                if(webView.url.equals("https://arca.live/channels")){
+                if(webView.url.equals("https://arca.live/channels")){ //채널 검색 액티비티 보여주기
                     webView.loadUrl("https://arca.live")
                 }
 
@@ -48,7 +65,6 @@ class ArcaViewFragment : Fragment() {
         }
         webView.webViewClient = object: WebViewClient(){
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
-                webView.loadUrl(url)
                 return false
             }
         }
@@ -60,9 +76,20 @@ class ArcaViewFragment : Fragment() {
         webSettings.builtInZoomControls = true
         webSettings.cacheMode = WebSettings.LOAD_DEFAULT
         webSettings.domStorageEnabled = true
+        WebSettingsCompat.setForceDark(webSettings, FORCE_DARK_ON)
         webView.loadUrl("https://arca.live")
-
 
         return v
     }
+
+    fun checkBackOrExit() : Boolean{
+        return if(webView.canGoBack()) {
+            webView.goBack()
+            false
+        } else {
+            true
+        }
+    }
+
+
 }

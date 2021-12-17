@@ -39,6 +39,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.webkit:webkit:1.4.0"
 
     //외부 라이브러리
     implementation 'com.airbnb.android:lottie:4.2.2'
