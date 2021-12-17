@@ -42,7 +42,7 @@ dependencies {
 
     //외부 라이브러리
     implementation 'com.airbnb.android:lottie:4.2.2'
-
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
     //테스트 유닛
     testImplementation 'junit:junit:4.+'

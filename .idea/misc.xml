@@ -9,6 +9,9 @@
         <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/drawable/rounded_edittext.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/layout/fragment_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
+        <entry key="app/src/main/res/layout/fragment_arca_view.xml" value="0.206215949982344" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.29359358459475965" />
       </map>
     </option>
   </component>
@@ -17,5 +20,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.213768115942029" />
+      </ProjectState>
+    </option>
   </component>
 </project>
