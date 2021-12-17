@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         val viewPager2 = findViewById<ViewPager2>(R.id.mainViewpager)
         viewPager2.adapter = MainFragmentStateAdapter(this)
-        //viewPager2.isUserInputEnabled = false  스와이프 막기
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
