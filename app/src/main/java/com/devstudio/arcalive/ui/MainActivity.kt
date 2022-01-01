@@ -26,17 +26,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    override fun onBackPressed() {
-        val targetFragment = supportFragmentManager.findFragmentById(R.id.mainViewpager) as ArcaViewFragment
-        if(targetFragment.checkBackOrExit()){
+    fun exitAlertDialog() {
             AlertDialog.Builder(this@MainActivity, R.style.Theme_AppCompat_Dialog_Alert).apply {
                 setTitle("앱 종료")
                 setMessage("아카라이브 앱을 종료하시겠습니까?")
-                setPositiveButton("종료", DialogInterface.OnClickListener { dialog, which -> super.onBackPressed() })
+                setPositiveButton("종료", DialogInterface.OnClickListener { dialog, which -> finish() })
                 setNegativeButton("돌아가기", DialogInterface.OnClickListener { dialog, which ->  })
             }.show()
-        }
-
-
     }
 }

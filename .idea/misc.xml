@@ -8,6 +8,8 @@
         <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/drawable/light_arcalive.xml" value="0.378125" />
         <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/drawable/rounded_edittext.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/layout/activity_search_channel.xml" value="0.175" />
+        <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/layout/fragment_arca_view.xml" value="0.175" />
         <entry key="..\:/AndroidStudioProject/ArcaLive/app/src/main/res/layout/fragment_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_search_channel.xml" value="0.20108695652173914" />
